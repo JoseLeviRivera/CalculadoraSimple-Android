@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mod.setOnClickListener(this);
         clearChar.setOnClickListener(this);
         clear.setOnClickListener(this);
+        ac.setOnClickListener(this);
     }
 
     private void loadButton(){
@@ -142,12 +143,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 action.setText(a);
                 break;
             case R.id.id_clear:
-                a = "";
-                result.setText("");
-                action.setText(a);
+                clearData();
                 break;
             case R.id.id_clearChar:
                 clearChar();
+                break;
+            case R.id.id_ac:
+                clearData();
                 break;
             case R.id.id_equal:
                 resultOperation();
@@ -163,6 +165,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    public void clearData(){
+        a = "";
+        result.setText("");
+        action.setText(a);
+    }
     private void resultOperation() {
         if(!a.isEmpty() || a.length() > 1){
             proceso = this.a.toString();
